@@ -20,3 +20,23 @@ It allows users to send messages through a contact form, and an admin can manage
 - HTML & CSS
 - XAMPP (Local Server)
 ## Project Structure
+contact_system/
+│
+├── config/
+│ └── db.php
+│
+├── includes/
+│ ├── header.php
+│ └── footer.php
+│
+├── assets/
+│ └── css/
+│ └── style.css
+│
+├── admin/
+│ ├── dashboard.php
+│ ├── edit.php
+│ └── delete.php
+│
+├── index.php
+├── submit.php
