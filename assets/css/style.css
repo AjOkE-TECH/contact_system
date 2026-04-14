@@ -1,0 +1,48 @@
+/* Form Container */
+.form-container {
+    width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Form Title */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs & Textarea */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Focus Effect */
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Button Hover */
+button:hover {
+    background: #0056b3;
+}
