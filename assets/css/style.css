@@ -5,7 +5,6 @@
     background: #fff;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* Form Title */
@@ -22,12 +21,6 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-}
-
-/* Focus Effect */
-input:focus, textarea:focus {
-    border-color: #007bff;
-    outline: none;
 }
 
 /* Button */
