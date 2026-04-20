@@ -1,15 +1,42 @@
 <?php
-include "config/db.php";
+session_start(); // ✅ VERY IMPORTANT
+require_once 'config/db.php';
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
+if (isset($_POST['submit'])) {
 
-$sql = "INSERT INTO contacts (name, email, phone, message)
-        VALUES ('$name', '$email', '$phone', '$message')";
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $message = trim($_POST['message']);
 
-mysqli_query($conn, $sql);
+    // ❌ VALIDATION
+    if (empty($name) || empty($email) || empty($phone) || empty($message)) {
+        $_SESSION['error'] = "All fields are required!";
+    }
 
-echo "Message sent successfully!";
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['error'] = "Invalid email format!";
+    }
+
+    else {
+        // ✅ SANITIZE
+        $name = htmlspecialchars($name);
+        $email = htmlspecialchars($email);
+        $phone = htmlspecialchars($phone);
+        $message = htmlspecialchars($message);
+
+        $sql = "INSERT INTO contacts (name, email, phone, message)
+                VALUES ('$name', '$email', '$phone', '$message')";
+
+        if (mysqli_query($conn, $sql)) {
+            $_SESSION['success'] = "Message sent successfully!";
+        } else {
+            $_SESSION['error'] = "Something went wrong!";
+        }
+    }
+}
+
+// 🔁 Redirect back
+header("Location: index.php");
+exit();
 ?>

@@ -1,4 +1,22 @@
+<?php session_start(); ?>
 <?php include "includes/header.php"; ?>
+
+<?php if (isset($_SESSION['error'])): ?>
+    <p style="color:red;">
+        <?= $_SESSION['error']; ?>
+    </p>
+<?php endif; ?>
+
+<?php if (isset($_SESSION['success'])): ?>
+    <p style="color:green;">
+        <?= $_SESSION['success']; ?>
+    </p>
+<?php endif; ?>
+
+<?php
+unset($_SESSION['error']);
+unset($_SESSION['success']);
+?>
 
 <div class="form-container">
     <h2>Contact Us</h2>
