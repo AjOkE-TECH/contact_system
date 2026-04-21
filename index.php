@@ -26,11 +26,13 @@ unset($_SESSION['success']);
         
         <input type="email" name="email" placeholder="Your Email" required>
         
-        <input type="text" name="phone" placeholder="Your Phone">
+        <input type="text" name="phone" placeholder="Your Phone" required>
         
-        <textarea name="message" placeholder="Your Message"></textarea>
+        <textarea name="message" placeholder="Your Message" required></textarea>
         
-        <button type="submit">Send Message</button>
+        <button type="submit" name="submit">Send Message</button>
     </form>
 </div>
+
+
 <?php include "includes/footer.php"; ?>

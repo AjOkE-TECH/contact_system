@@ -55,10 +55,12 @@ th {
     background: #f4f4f4;
 }
 
-.error {
-    color: red;
-}
-
 .success {
     color: green;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-align: center;
 }

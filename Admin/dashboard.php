@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $sql);
             <?php while ($row = mysqli_fetch_assoc($result)): ?>
 
                 <?php
-                // ✅ SANITIZE DATA (VERY IMPORTANT)
+                //  SANITIZE DATA 
                 $name = htmlspecialchars($row['name']);
                 $email = htmlspecialchars($row['email']);
                 $phone = htmlspecialchars($row['phone']);

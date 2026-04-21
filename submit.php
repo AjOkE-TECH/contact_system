@@ -1,6 +1,10 @@
 <?php
-session_start(); // ✅ VERY IMPORTANT
+session_start();
 require_once 'config/db.php';
+
+if (!$conn) {
+    die("Database connection failed");
+}
 
 if (isset($_POST['submit'])) {
 
@@ -9,7 +13,7 @@ if (isset($_POST['submit'])) {
     $phone = trim($_POST['phone']);
     $message = trim($_POST['message']);
 
-    // ❌ VALIDATION
+    // VALIDATION
     if (empty($name) || empty($email) || empty($phone) || empty($message)) {
         $_SESSION['error'] = "All fields are required!";
     }
@@ -19,7 +23,7 @@ if (isset($_POST['submit'])) {
     }
 
     else {
-        // ✅ SANITIZE
+        // SANITIZE (for output safety)
         $name = htmlspecialchars($name);
         $email = htmlspecialchars($email);
         $phone = htmlspecialchars($phone);
@@ -36,7 +40,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-// 🔁 Redirect back
+// Redirect back
 header("Location: index.php");
 exit();
 ?>
