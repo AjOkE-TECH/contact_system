@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     }
 
     else {
-        // SANITIZE (for output safety)
+        // SANITIZE (this is for output safety)
         $name = htmlspecialchars($name);
         $email = htmlspecialchars($email);
         $phone = htmlspecialchars($phone);
